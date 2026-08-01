@@ -5,23 +5,22 @@ import java.util.Scanner;
 public class IsYourHorseshoeOnTheOtherHoof {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        int d = sc.nextInt();
+
+        int[] arr = new int[4];
+
+        for (int i = 0; i < 4; i++) {
+            arr[i] = sc.nextInt();
+        }
+
         int count = 0;
 
-        if(a == b && a == c && a == d){
-
-        }
-        if (a == b || a == c || a == d){
-        count++;
-        }
-        else if (b == c || b == d){
-            count++;
-        }
-        else if (c == d){
-            count++;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                    break;
+                }
+            }
         }
 
         System.out.println(count);
